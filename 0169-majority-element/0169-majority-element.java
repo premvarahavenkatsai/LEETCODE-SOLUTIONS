@@ -8,12 +8,15 @@ class Solution {
         int max=0;
         int majority=0;
         for(var entry:map.entrySet()){
-            if(entry.getValue() > max){
-                max = entry.getValue();
-                majority = entry.getKey();
-            }
+            // if(entry.getValue() > max){
+            //     max = entry.getValue();
+            //     majority = entry.getKey();
+            // }
+            if(entry.getValue() > n / 2) return entry.getKey();
             System.out.println(entry.getKey()+":"+entry.getValue()+" ");
         }
+        Arrays.sort(nums);
+        // for(int )
         return majority;
     }
 }
