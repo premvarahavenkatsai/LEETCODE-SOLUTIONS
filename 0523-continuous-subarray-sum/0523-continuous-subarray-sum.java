@@ -7,11 +7,14 @@ class Solution {
         for(int i=0;i<n;i++){
             sum+=nums[i];
             int prefix = sum % k;
+            System.out.print(prefix+" ");
             if(map.containsKey(prefix)){
                 int len = i - map.get(prefix);
                 if(len >= 2) return true;
             }
-            map.put(prefix,i);
+            if(!map.containsKey(prefix)){
+                map.put(prefix,i);
+            }
         }
         return false;
     }
